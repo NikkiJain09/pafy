@@ -202,7 +202,7 @@ class Playlist(object):
                             size=self._size, callback=self._callback)
 
                 except IOError as e:
-                    self.callback("%s: %s" % (v['title'], e.message))
+                    self._callback("%s" % e)
                     continue
 
                 pafy_obj.populate_from_playlist(vid_data)
